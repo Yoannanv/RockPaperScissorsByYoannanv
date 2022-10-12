@@ -1,17 +1,17 @@
-function game() {
+function game(index) {
     const rock = 'Rock';
     const paper = 'Paper';
     const scissors = 'Scissors';
 
-    let playerTurn = '';
+    let playerTurn = index;
     let computerRandomNumber = Math.floor(Math.random() * 3) + 1;
     let computerNextMove = '';
 
-    if (playerTurn == 'r' || playerTurn == 'Rock') {
+    if (playerTurn == 'r' || playerTurn == 'rock') {
         playerTurn = rock;
-    } else if (playerTurn == 'p' || playerTurn == 'Paper') {
+    } else if (playerTurn == 'p' || playerTurn == 'paper') {
         playerTurn = paper;
-    } else if (playerTurn == 's' || playerTurn == 'Scissors') {
+    } else if (playerTurn == 's' || playerTurn == 'scissors') {
         playerTurn = scissors;
     } else {
         console.log('Invalid Input. Try again ...');
@@ -30,12 +30,12 @@ function game() {
 
     if ((playerTurn === rock && computerNextMove === scissors) || (playerTurn === paper && computerNextMove === rock) || 
     (playerTurn === scissors && computerNextMove === paper)){
-    console.log(`You win!`);
+    console.log(`\x1b[33m You win! \x1b[0m`); //' Welcome to the app! '
     }else if((playerTurn === rock && computerNextMove === paper) || (playerTurn === paper && computerNextMove === scissors) || 
     (playerTurn === scissors && computerNextMove === rock)){
         console.log(`You lose`);
     }else{
-        console.log(`This game was a draw`);
+        console.log(`\x1b[33m This game was a draw \x1b[0m`);
     }
 }
-game('r')
+game('p')
